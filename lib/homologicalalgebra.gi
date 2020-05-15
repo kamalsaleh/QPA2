@@ -119,7 +119,7 @@ function( R, n )
     
     cat := CapCategory( R );
     res := AsChainComplex( ProjectiveResolution( R ) );
-    diffs := Differentials( res ); 
+    diffs := AsZList( Differentials( res ) );
     res := ChainComplex( cat, Replace( diffs, 0, [ ProjectiveCover( R ) ] ) );
     for i in [ 1..n ] do
         K := KernelObject( res^( i - 1 ) );
@@ -212,7 +212,7 @@ function( R, n )
     fi;
     cat := CapCategory( R );
     res := AsChainComplex( ProjectiveResolution( R ) );
-    diffs := Differentials( res ); 
+    diffs := AsZList( Differentials( res ) );
     res := ChainComplex( cat, Replace( diffs, 0, [ ProjectiveCover( R ) ] ) );
     
     return KernelObject( res^( n - 1 ) );

@@ -213,7 +213,7 @@ function( extension )
   R1 := EndTerm( extension );
   cat := CapCategory( R1 );
   res := AsChainComplex( ProjectiveResolution( R1 ) );
-  diffs := Differentials( res ); 
+  diffs := AsZList( Differentials( res ) );
   res := ChainComplex( cat, Replace( diffs, 0, [ ProjectiveCover( R1 ) ] ) );
   dn := res^n;
   h1 := AsCycle( extension );
