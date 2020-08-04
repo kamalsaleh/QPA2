@@ -72,7 +72,8 @@ DeclareProperty( "IsIdentityMatrix", IsQPAMatrix );
 #!  Returns <C>true</C> if <A>M</A> is a zero matrix, <C>false</C> otherwise.
 DeclareProperty( "IsZeroMatrix", IsQPAMatrix );
 
-if false then
+# if the version of gap is not at least 4.11.0, then declare RowsOfMatrix.
+if not CompareVersionNumbers( GAPInfo.Version, "4.11.0" ) then
 #! @Arguments M
 #! @Returns list of lists of ring elements
 #! @Description
