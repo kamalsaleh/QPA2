@@ -34,6 +34,13 @@ jobs:
       - uses: gap-actions/setup-gap@v2
         with:
           GAPBRANCH: ${{ matrix.gap-branch }}
+      - name: "Clone dependencies (incl. the suggested package ComplexesCategories)"
+        run: |
+          mkdir -p "$HOME/.gap/pkg"
+          git clone --depth 1 https://github.com/homalg-project/homalg_project.git "$HOME/.gap/pkg/homalg_project/"
+          git clone --depth 1 https://github.com/homalg-project/CAP_project.git "$HOME/.gap/pkg/CAP_project"
+          git clone --depth 1 https://github.com/homalg-project/CategoricalTowers.git "$HOME/.gap/pkg/CategoricalTowers"
+          git clone --depth 1 https://github.com/homalg-project/HigherHomologicalAlgebra.git "$HOME/.gap/pkg/HigherHomologicalAlgebra"
       - uses: gap-actions/build-pkg@v1
       - uses: gap-actions/run-pkg-tests@v3
       - uses: gap-actions/run-pkg-tests@v3
