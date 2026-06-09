@@ -4,6 +4,7 @@
 
 #! @Description
 #!  Category for QPA's matrices.
+#! @Label
 DeclareCategory( "IsQPAMatrix", IsMatrixObj );
 
 #! @Arguments M
